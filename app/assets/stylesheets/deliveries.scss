@@ -1,0 +1,21 @@
+// Place all the styles related to the deliveries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.delivery-panel {
+  width: 100%;
+  height: 40px;
+  background-color: khaki;
+}
+
+.market-list {
+  float: left;
+  width: 50%;
+  height: 40px;
+}
+
+.storage-list {
+  float: left;
+  width: 50%;
+  height: 40px;
+}

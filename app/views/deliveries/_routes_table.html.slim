@@ -1,0 +1,9 @@
+table
+  tr
+    - @storages.each do |storage|
+      th
+        = storage.name
+  - @markets.each do |market|
+    tr
+      td
+        = market.name

@@ -1,0 +1,20 @@
+table
+  tr
+    th
+      = :name
+    th
+      = :capacity
+    th
+      = :current_quantity
+    th
+      = :diff
+  - destinations.each do |dest|
+    tr
+      td
+        = dest.name
+      td
+        = dest.capacity
+      td
+        = dest.current_quantity
+      td
+        = dest.capacity - dest.current_quantity

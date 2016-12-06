@@ -1,0 +1,11 @@
+.delivery-panel
+  p delivery
+
+.market-list
+  = render partial: 'deliveries/destination_list', locals: { destinations: @markets }
+
+.storage-list
+  = render partial: 'deliveries/destination_list', locals: { destinations: @storages }
+
+.routes-table
+
