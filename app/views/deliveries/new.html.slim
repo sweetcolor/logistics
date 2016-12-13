@@ -1,11 +1,10 @@
+.destinations-nav
+  = link_to 'Доставка продукції до Складу', deliveries_new_path(destination: :storage)
+  = link_to 'Доставка продукції до Магазину', deliveries_new_path(destination: :market)
+
 .delivery-panel
   p delivery
 
-.market-list
-  = render partial: 'deliveries/destination_list', locals: { destinations: @markets }
-
-.storage-list
-  = render partial: 'deliveries/destination_list', locals: { destinations: @storages }
-
-.routes-table
+.destinations-list
+  = render partial: 'deliveries/destination_list', locals: { destinations: @destinations }
 

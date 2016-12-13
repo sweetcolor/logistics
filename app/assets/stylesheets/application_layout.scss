@@ -4,11 +4,28 @@
 
 .header {
   background-color: #999999;
-  text-align: center;
   margin: 0;
   padding: 20px;
   h1 {
+    text-align: center;
     margin: 0;
+  }
+  ul {
+    margin-left: 80px;
+    padding-left: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+      border: 1px dashed #000;
+      border-bottom: none;
+      padding: 5px 15px 5px 15px;
+      background-color: #EAEAEA;
+      text-decoration: none;
+      color: #333;
+    }
   }
 }
 

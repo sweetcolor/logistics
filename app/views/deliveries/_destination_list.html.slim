@@ -1,20 +1,46 @@
-table
-  tr
-    th
-      = :name
-    th
-      = :capacity
-    th
-      = :current_quantity
-    th
-      = :diff
-  - destinations.each do |dest|
-    tr
-      td
-        = dest.name
-      td
-        = dest.capacity
-      td
-        = dest.current_quantity
-      td
-        = dest.capacity - dest.current_quantity
+- @ordered_destinations.each do |ord_dest|
+  .dest
+    .dest-name
+      = ord_dest.name
+    .dest-diff
+      = ord_dest.diff
+    .dest-content
+      table
+        tr
+          th
+            | Місткість
+          th
+            | Поточна кількість
+          th
+            | Назва вантажу
+          th
+            | Вантажний автомобіль
+          th
+            | Звідки буде доставлений
+          th
+            | Ціна доставки
+        - @destinations.where('destinations.name = ?', ord_dest.name).order('diff desc').each do |dest|
+          - dest_begin = @start_dest.where('end_id = ? and cargoes.name = ?', dest.d_id, dest.c_name).order('road_price').first
+          tr
+            td
+              = dest.dl_capacity
+            td
+              = dest.current_quantity
+            td
+              = dest.c_name
+            td
+              - if dest_begin.present?
+                = dest_begin.t_name
+              - else
+                | --
+            td
+              - if dest_begin.present?
+                = dest_begin.d_name
+              - else
+                | --
+            td
+              - if dest_begin.present?
+                = dest_begin.road_price
+              - else
+                | --
+

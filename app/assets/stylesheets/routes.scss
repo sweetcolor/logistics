@@ -1,29 +1,23 @@
-// Place all the styles related to the deliveries controller here.
+// Place all the styles related to the routes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.delivery-panel {
-  width: 100%;
-  height: 40px;
-  background-color: khaki;
-}
-
-.market-list {
-  float: left;
-  width: 50%;
-  height: 40px;
-}
-
-.destinations-list {
-  float: left;
-  width: 50%;
-  height: 40px;
-  .dest {
-    margin-bottom: 20px;
+table.routes-list {
+  font-size: 13px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid black;
+  td, th {
+    border-left: 1px solid black;
+    text-align: center;
+  }
+  td:first-child, th:first-child {
+    border: 0;
+    text-align: left;
   }
 }
 
-.destinations-nav {
+.route-nav {
   margin-bottom: 10px;
   a {
     display: inline-block;

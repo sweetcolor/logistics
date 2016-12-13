@@ -1,1 +1,7 @@
 h1 site header
+nav
+  ul
+    li
+      = link_to :deliveries, deliveries_new_path(destination: :market)
+    li
+      = link_to :routes, routes_show_path(begin: :storages, end: :markets)

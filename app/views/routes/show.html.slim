@@ -1,0 +1,20 @@
+.route-nav
+  = link_to 'Виробники сировини - Підприємства', routes_show_path(begin: :raw_producers, end: :enterprises)
+  = link_to 'Підприємства - Склади', routes_show_path(begin: :enterprises, end: :storages)
+  = link_to 'Склади - Магазини', routes_show_path(begin: :storages, end: :markets)
+
+table.routes-list
+  tr
+    th
+      | Name
+    - @ends.each do |dest_end|
+      th
+        = dest_end.name
+  - @begins.each do |dest_begin|
+    tr
+      td
+        = dest_begin.name
+      - @ends.each do |dest_end|
+        td
+          - route = find_route_by_destinations(dest_begin, dest_end)
+          = route.length if route.present?
